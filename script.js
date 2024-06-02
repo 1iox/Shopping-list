@@ -17,6 +17,8 @@ class ShoppingList {
         // Set up event listeners for form submission, clearing the list, and filtering items
         this.setupEventListeners();
         this.checkUi(); // Check UI initially to set initial visibility
+         // Load items from local storage upon initialization
+         this.loadItemsFromStorage();
     }
 
     // Set up event listeners for form submission, clearing the list, and filtering items
@@ -32,9 +34,10 @@ class ShoppingList {
         // Get the input value and trim any leading or trailing spaces
         const itemInput = document.getElementById("item-input").value.trim();
         // Check if the input is not empty
-        if (itemInput !== "") {
+        if (itemInput) {
             // Add the item to the list
             this.itemList.push(itemInput);
+            this.addItemToStorage(itemInput); // Add item to local storage
             // Render the updated list
             this.renderItems();
             // Clear the input field after adding the item
@@ -48,12 +51,14 @@ class ShoppingList {
     // Method to remove an item from the list
     removeItem(index) {
         this.itemList.splice(index, 1);
+        this.removeItemFromStorage(index); // Remove item from local storage
         this.renderItems();
     }
 
     // Method to clear all items from the list
     clearAll() {
         this.itemList = [];
+        this.clearItemsFromStorage(); // Clear items from local storage
         this.renderItems();
     }
 
@@ -121,10 +126,41 @@ class ShoppingList {
             document.getElementById("filter").style.display = 'block';
         }
     }
+
+// Method to add item to local storage
+addItemToStorage(item) {
+    let itemsFromStorage;
+    if (localStorage.getItem('items') === null) {
+        itemsFromStorage = [];
+    } else {
+        itemsFromStorage = JSON.parse(localStorage.getItem('items'));
+    }
+    itemsFromStorage.push(item);
+    localStorage.setItem('items', JSON.stringify(itemsFromStorage));
 }
 
-// Event listener for the DOMContentLoaded event to ensure the DOM is fully loaded before running the script
+// Method to remove item from local storage
+removeItemFromStorage(index) {
+    let itemsFromStorage = JSON.parse(localStorage.getItem('items'));
+    itemsFromStorage.splice(index, 1);
+    localStorage.setItem('items', JSON.stringify(itemsFromStorage));
+}
+
+// Method to clear items from local storage
+clearItemsFromStorage() {
+    localStorage.removeItem('items');
+}
+
+// Method to load items from local storage upon initialization
+loadItemsFromStorage() {
+    if (localStorage.getItem('items') !== null) {
+        this.itemList = JSON.parse(localStorage.getItem('items'));
+        this.renderItems();
+    }
+}
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Create an instance of the ShoppingList class
-    const shoppingList = new ShoppingList();
+const shoppingList = new ShoppingList();
 });
+
