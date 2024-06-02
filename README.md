@@ -1,6 +1,6 @@
 <h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://isruan.com" target="_blank">Ruan</a>
+  Shopping list website <br/>
+  <a href="https://isruan.com" target="_blank">Shopping List</a>
 </h2>
 
 Fork repo
