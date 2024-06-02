@@ -3,9 +3,9 @@
   <a href="https://ruun.github.io/Shopping-list/" target="_blank">Shopping List</a>
 </h2>
 
-![Shopping list website interface](images/shopping1.png)
-![Shopping list website interface](images/shopping2.png)
-![Shopping list website interface](images/shopping3.png)
+![Shopping list website interface](images/shopping1.png);
+![Shopping list website interface](images/shopping2.png);
+![Shopping list website interface](images/shopping3.png);
 
 Fork repo
 --
