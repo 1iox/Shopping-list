@@ -16,7 +16,7 @@ class ShoppingList {
         this.clearButton = document.getElementById("clear");
         // Set up event listeners for form submission, clearing the list, and filtering items
         this.setupEventListeners();
-         this.checkUi(); // Check UI initially to set initial visibility
+        this.checkUi(); // Check UI initially to set initial visibility
     }
 
     // Set up event listeners for form submission, clearing the list, and filtering items
