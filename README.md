@@ -3,7 +3,8 @@
   <a href="https://ruun.github.io/Shopping-list/" target="_blank">Shopping List</a>
 </h2>
 
-![Shopping list website interface 1](images/shopping1.png) ![Shopping list website interface 2](images/shopping2.png) ![Shopping list website interface 3](images/shopping3.png)
+<img src="images/shopping1.png" alt="Shopping list website interface" style="width:200px;height:auto;"> <img src="images/shopping2.png" alt="Shopping list website interface" style="width:200px;height:auto;"> <img src="images/shopping3.png" alt="Shopping list website interface" style="width:200px;height:auto;">
+
 
 
 Fork repo
