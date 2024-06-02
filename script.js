@@ -93,7 +93,13 @@ class ShoppingList {
             removeButton.className = "remove-item btn-link text-red";
             removeButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
             // Add click event listener to the remove button to remove the item when clicked
-            removeButton.addEventListener("click", () => this.removeItem(index));
+            removeButton.addEventListener("click", () => {
+                if (confirm('Are you sure?')) {
+                    this.removeItem(index);
+                    this.checkUi();
+                }
+            });
+            
             // Append the remove button to the new item
             newItem.appendChild(removeButton);
             // Append the new item to the list container
