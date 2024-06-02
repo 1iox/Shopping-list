@@ -1,6 +1,6 @@
 <h2 align="center">
   Shopping list website <br/>
-  <a href="https://isruan.com" target="_blank">Shopping List</a>
+  <a href="https://ruun.github.io/Shopping-list/" target="_blank">Shopping List</a>
 </h2>
 
 Fork repo

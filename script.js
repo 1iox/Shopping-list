@@ -16,23 +16,44 @@ class ItemList {
         removeButton.className = "remove-item btn-link text-red";
         removeButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
         // Add click event listener to the remove button to remove the item when clicked
-        removeButton.addEventListener("click", () => this.removeItem(newItem));
+        removeButton.addEventListener("click", () =>{
+            this.checkUi(); // Check UI after removing an item
+         this.removeItem(newItem)});
 
         // Append the remove button to the new item
         newItem.appendChild(removeButton);
         // Append the new item to the list container
         this.itemListElement.appendChild(newItem);
+
+        // Check UI after adding a new item
+        this.checkUi();
     }
 
     // Method to remove an item from the list
     removeItem(itemElement) {
         itemElement.remove();
+        this.checkUi(); // Check UI after removing an item
     }
 
     // Method to clear all items from the list
     clearAll() {
         this.itemListElement.innerHTML = "";
+        // Check UI after adding a new item
+        this.checkUi();
     }
+
+    checkUi() {
+        const itemList = this.itemListElement.children;
+        
+        if (itemList.length === 0) {
+            document.getElementById("clear").style.display = 'none';
+            document.getElementById("filter").style.display = 'none';
+        } else {
+            document.getElementById("clear").style.display = 'block';
+            document.getElementById("filter").style.display = 'block';
+        }
+    }    
+
 }
 
 class FormHandler {
@@ -69,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create instances of ItemList and FormHandler classes
     const itemList = new ItemList();
     const formHandler = new FormHandler(itemList);
+    itemList.checkUi(); // Initial check to set the UI state
 });
 
 class Filter {
