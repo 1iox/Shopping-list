@@ -6,7 +6,6 @@
 <img src="images/shopping1.png" alt="Shopping list website interface" style="width:200px;height:auto;"> <img src="images/shopping2.png" alt="Shopping list website interface" style="width:200px;height:auto;"> <img src="images/shopping3.png" alt="Shopping list website interface" style="width:200px;height:auto;">
 
 
-
 Fork repo
 --
 Fork this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account.
