@@ -1,7 +1,5 @@
-<h2 align="center">
-  Shopping list website <br/>
-  <a href="https://ruun.github.io/Shopping-list/" target="_blank">Shopping List</a>
-</h2>
+# Shopping list website
+[Shopping List](https://ruun.github.io/Shopping-list/)
 
 <img src="/images/shopping1.png" alt="Shopping list website interface" style="width:32%;height:auto;"> <img src="/images/Shopping2.png" alt="Shopping list website interface" style="width:32%;height:auto;"> <img src="/images/Shopping3.png" alt="Shopping list website interface" style="width:32%;height:auto;">
 
